@@ -4,7 +4,6 @@ def make_query(listqueries):
     #if len(listqueries) == 3: 
         # the query is not compound 
         # check the operator 
-        #operator = ""
         #if listqueries[1] == "<":
             # call func
             #print("<")
