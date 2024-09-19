@@ -1,0 +1,129 @@
+[
+    {
+        "track": "bad guy",
+        "artist": "Billie Eilish",
+        "album_name": "When We All Fall Asleep, Where Do We Go?",
+        "release_date": "3/29/29",
+        "genre": "pop",
+        "sub_genre": "dance pop"
+    },
+
+    {
+        "track": "hollywoods bleeding",
+        "artist": "post malone",
+        "album_name": "Circles",
+        "release_date": "9/6/19",
+        "genre": "pop",
+        "sub_genre": "post-teen pop"
+    },
+
+    {
+        "track": "Hey Brother",
+        "artist": "Avicii",
+        "album_name": "TRUE",
+        "release_date": "1/1/13",
+        "genre": "pop",
+        "sub_genre": "electropop"
+    },
+
+    {
+        "track": "SAD!",
+        "artist": "XXXTENTACION",
+        "album_name": "Trap strefa",
+        "release_date": "3/16/18",
+        "genre": "rap",
+        "sub_genre": "trap"
+    },
+
+    {
+        "track": "bad vibes forever",
+        "artist": "XXXTENTACION",
+        "album_name": "bad vibes forever",
+        "release_date": "11/22/19",
+        "genre": "rap",
+        "sub_genre": "sad trap"
+    },
+
+    {
+        "track": "OUT WEST (feat. Young Thug)",
+        "artist": "JACKBOYS",
+        "album_name": "Trap Americana",
+        "release_date": "12/27/19",
+        "genre": "rap",
+        "sub_genre": "trap"
+    },
+
+    {
+        "track": "Ye",
+        "artist": "Burna Boy",
+        "album_name": "Outside",
+        "release_date": "1/26/18",
+        "genre": "r&b",
+        "sub_genre": "urban contemporary"
+    },
+
+    {
+        "track": "Jocelyn Flores",
+        "artist": "XXXTENTACION",
+        "album_name": "Project",
+        "release_date": "8/25/17",
+        "genre": "rap"
+    },
+
+    {
+        "track": "Havana",
+        "artist": "Camilla Cabello",
+        "album_name": "Havana",
+        "release_date": "1/12/18",
+        "genre": "pop",
+        "sub_genre": "post-teen pop"
+    },
+
+    {
+        "track": "Otro Trago - Remix",
+        "artist": "Sech",
+        "album_name": "Otro Trago - Remix",
+        "release_date": "7/26/19",
+        "genre": "rap"
+    },
+
+    {
+        "track": "all the good girls go to hell",
+        "artist": "Billie Eilish",
+        "album_name": "When We All Fall Asleep, Where Do We Go?",
+        "release_date": "3/29/19",
+        "genre": "pop",
+        "sub_genre": "indie poptomism"
+    },
+    {
+        "track": "Too Much",
+        "artist": "Pale",
+        "album_name": "Too Much",
+        "release_date": "3/12/13",
+        "genre": "pop",
+        "sub_genre": "indie poptomism"
+    },
+    {
+        "track": "You Are The Right One",
+        "artist": "Sports",
+        "album_name": "Naked All The Time",
+        "release_date": "7/24/15",
+        "genre": "pop"
+    },
+    {
+        "track": "True Colors",
+        "artist": "XO Cupid",
+        "album_name": "True COlors",
+        "release_date": "9/21/18",
+        "genre": "pop",
+        "sub_genre": "dance pop"
+    },
+    {
+        "track": "Sweet Dreams",
+        "artist": "Winati",
+        "album_name": "Sweet Dreams",
+        "release_date": "6/21/19",
+        "genre": "pop",
+        "sub_genre": "dance pop"
+    }
+]
