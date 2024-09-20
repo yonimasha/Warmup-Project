@@ -29,7 +29,7 @@
         "album_name":"Blinding Lights",
         "release_date":"11/29/2019",
         "genre":"pop",
-        "subgenre":"dance pop"
+        "sub_genre":"dance pop"
     },
     {
         "artist":"Dua Lipa",
@@ -53,7 +53,7 @@
         "album_name":"everything i wanted",
         "release_date":"11/13/2019",
         "genre":"pop",
-        "subgenre":"dance pop"
+        "sub_genre":"dance pop"
     },
     {
         "artist":"The Black Eyed Peas",
