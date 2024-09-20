@@ -3,7 +3,7 @@
         "artist":"Maroon 5",
         "track":"Memories",
         "album_name":"Memories",
-        "release_date": "09/09/2024",
+        "dance_ability": 3,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -11,7 +11,7 @@
         "artist":"Roddy Ricch",
         "track":"The Box",
         "album_name":"Please Excuse Me For Being Antisocial",
-        "release_date":"12/06/2019",
+        "dance_ability": 4,
         "genre":"rap",
         "sub_genre":"hip hop"
     },
@@ -19,7 +19,7 @@
         "artist":"KAROL G",
         "track":"Tusa",
         "album_name":"Tusa",
-        "release_date":"11/07/2019",
+        "dance_ability": 4,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -27,7 +27,7 @@
         "artist":"The Weeknd",
         "track":"Blinding Lights",
         "album_name":"Blinding Lights",
-        "release_date":"11/29/2019",
+        "dance_ability": 2.5,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -35,7 +35,7 @@
         "artist":"Dua Lipa",
         "track":"Don't Start Now",
         "album_name":"Don't Start Now",
-        "release_date":"10/31/2019",
+        "dance_ability": 3.5,
         "genre":"pop",
         "sub_genre":"post-teen pop"
     },
@@ -43,7 +43,7 @@
         "artist":"Trevor Daniel",
         "track":"Falling",
         "album_name":"Falling",
-        "release_date":"10/05/2018",
+        "dance_ability": 3.5,
         "genre":"pop",
         "sub_genre":"electropop"
     },
@@ -51,7 +51,7 @@
         "artist":"Billie Eilish",
         "track":"everything i wanted",
         "album_name":"everything i wanted",
-        "release_date":"11/13/2019",
+        "dance_ability": 3,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -59,7 +59,7 @@
         "artist":"The Black Eyed Peas",
         "track":"RITMO (Bad Boys For Life)",
         "album_name":"RITMO (Bad Boys For Life)",
-        "release_date": "10/12/2019",
+        "dance_ability": 3,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -67,14 +67,14 @@
         "artist":"Billie Eilish",
         "track":"bad guy",
         "album_name":"WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
-        "release_date":"3/29/2019",
+        "dance_ability": 2.5,
         "genre":"pop"
     },
     {
         "artist":"Justin Bieber",
         "track":"Yummy",
         "album_name":"Yummy",
-        "release_date":"01/03/2020",
+        "dance_ability": 2.5,
         "genre":"pop",
         "sub_genre":"dance pop"
     },
@@ -82,7 +82,7 @@
         "artist":"Camila Cabello",
         "track":"My Oh My (feat. DaBaby)",
         "album_name":"Romance",
-        "release_date": 12/06/2019,
+        "dance_ability": 3,
         "genre":"pop",
         "sub_genre":"post-teen pop"
     },
@@ -90,35 +90,35 @@
         "artist":"Lewis Capaldi",
         "track":"Someone You Loved",
         "album_name":"Divinely Uninspired To A Hellish Extent",
-        "release_date":"05/17/2019",
+        "dance_ability": 2.5,
         "genre":"pop"
     },
     {
         "artist":"blackbear",
         "track":"hot girl bummer",
         "album_name":"hot girl bummer",
-        "release_date": "08/23/2019",
+        "dance_ability": 3.5,
         "genre":"pop"
     },
     {
         "artist":"Travis Scott",
         "track":"HIGHEST IN THE ROOM",
         "album_name":"HIGHEST IN THE ROOM",
-        "release_date": 10/04/2019,
+        "release_date": "10/04/2019",
         "genre":"pop"
     },
     {
         "artist":"Regard",
         "track":"Ride It",
         "album_name":"Ride It",
-        "release_date": "07/26/2019",
+        "dance_ability": 4.5,
         "genre":"pop"
     },
     {
-        "track": "bad guy",
+        "track": "Listen Before I Go",
         "artist": "Billie Eilish",
         "album_name": "When We All Fall Asleep, Where Do We Go?",
-        "release_date": "03/29/2019",
+        "dance_ability": 2,
         "genre": "pop",
         "sub_genre": "dance pop"
     },
@@ -127,7 +127,7 @@
         "track": "hollywoods bleeding",
         "artist": "post malone",
         "album_name": "Circles",
-        "release_date": "09/06/2019",
+        "dance_ability": 1.5,
         "genre": "pop",
         "sub_genre": "post-teen pop"
     },
@@ -136,7 +136,7 @@
         "track": "Hey Brother",
         "artist": "Avicii",
         "album_name": "TRUE",
-        "release_date": "01/01/2013",
+        "dance_ability": 2.5,
         "genre": "pop",
         "sub_genre": "electropop"
     },
@@ -145,7 +145,7 @@
         "track": "SAD!",
         "artist": "XXXTENTACION",
         "album_name": "Trap strefa",
-        "release_date": "03/16/2018",
+        "dance_ability": 3.5,
         "genre": "rap",
         "sub_genre": "trap"
     },
@@ -154,7 +154,7 @@
         "track": "bad vibes forever",
         "artist": "XXXTENTACION",
         "album_name": "bad vibes forever",
-        "release_date": "11/22/2019",
+        "dance_ability": 4,
         "genre": "rap",
         "sub_genre": "sad trap"
     },
@@ -163,7 +163,7 @@
         "track": "OUT WEST (feat. Young Thug)",
         "artist": "JACKBOYS",
         "album_name": "Trap Americana",
-        "release_date": "12/27/2019",
+        "dance_ability": 4,
         "genre": "rap",
         "sub_genre": "trap"
     },
@@ -172,7 +172,7 @@
         "track": "Ye",
         "artist": "Burna Boy",
         "album_name": "Outside",
-        "release_date": "1/26/18",
+        "dance_ability": 2.5,
         "genre": "r&b",
         "sub_genre": "urban contemporary"
     },
@@ -181,7 +181,7 @@
         "track": "Jocelyn Flores",
         "artist": "XXXTENTACION",
         "album_name": "Project",
-        "release_date": "8/25/17",
+        "dance_ability": 4.5,
         "genre": "rap"
     },
 
@@ -189,7 +189,7 @@
         "track": "Havana",
         "artist": "Camilla Cabello",
         "album_name": "Havana",
-        "release_date": "1/12/18",
+        "dance_ability": 3.5,
         "genre": "pop",
         "sub_genre": "post-teen pop"
     },
@@ -198,7 +198,7 @@
         "track": "Otro Trago - Remix",
         "artist": "Sech",
         "album_name": "Otro Trago - Remix",
-        "release_date": "7/26/19",
+        "dance_ability": 3,
         "genre": "rap"
     },
 
@@ -206,7 +206,7 @@
         "track": "all the good girls go to hell",
         "artist": "Billie Eilish",
         "album_name": "When We All Fall Asleep, Where Do We Go?",
-        "release_date": "3/29/19",
+        "dance_ability": 3.5,
         "genre": "pop",
         "sub_genre": "indie poptomism"
     },
@@ -214,7 +214,7 @@
         "track": "Too Much",
         "artist": "Pale",
         "album_name": "Too Much",
-        "release_date": "3/12/13",
+        "dance_ability": 4,
         "genre": "pop",
         "sub_genre": "indie poptomism"
     },
@@ -222,14 +222,14 @@
         "track": "You Are The Right One",
         "artist": "Sports",
         "album_name": "Naked All The Time",
-        "release_date": "7/24/15",
+        "dance_ability": 3,
         "genre": "pop"
     },
     {
         "track": "True Colors",
         "artist": "XO Cupid",
-        "album_name": "True COlors",
-        "release_date": "9/21/18",
+        "album_name": "True Colors",
+        "dance_ability": 3,
         "genre": "pop",
         "sub_genre": "dance pop"
     },
@@ -237,7 +237,7 @@
         "track": "Sweet Dreams",
         "artist": "Winati",
         "album_name": "Sweet Dreams",
-        "release_date": "6/21/19",
+        "dance_ability": 4,
         "genre": "pop",
         "sub_genre": "dance pop"
     }
