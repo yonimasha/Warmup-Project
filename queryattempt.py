@@ -30,6 +30,9 @@ def make_query(listqueries):
         elif listqueries[1] == ">":
             result = query_greater(db, listqueries)
             print(result)
+    # handle for compound
+    # Use filter keyword for the query and chain where clauses
+    #query_ref = songs_ref.where(filter=firestore.FieldFilter('artist', '==', listqueries[2])).where(filter=firestore.FieldFilter('genre', '==', 'pop'))
             
             # call func
 
