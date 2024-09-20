@@ -1,9 +1,10 @@
 import queryattempt
-query = "artist"
+query = "genre"
 operator = "=="
-info = "Travis Scott"
+info = "pop"
 listqueries = [query, operator, info]
 
-queryattempt.make_query(listqueries) # calling function ‘make_query’ in queryattempt
+
+queryattempt.make_query(listqueries) # Assuming there’s a function named ‘main’ in script2.py
 
 
