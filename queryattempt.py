@@ -11,22 +11,6 @@ def make_query(listqueries):
     # connect to the database
     cred, db = connect_to_database()
     docs = db.collection("top100spotifysongscoll").stream()
-    
-
-    query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '>', listqueries[2]))
-    # Fetch and display only track names
-    results = query_ref.stream()
-
-    # List to hold all the songs by the artist
-    artist_songs = []
-
-    for doc in results:
-        data = doc.to_dict()
-        artist_songs.append(data['track']) 
-    #print(artist_songs)
-
-    #for doc in docs:
-        #print(f"{doc.id} => {doc.to_dict()}")
 
     # check the length of the list to determine if it is a compound query 
     if len(listqueries) == 3: 
@@ -64,8 +48,6 @@ def make_query(listqueries):
             artist_songs.append(data['track'])
         return artist_songs
 
-    #for item in listqueries:
-        #print(item)
     
 def connect_to_database():
     cred = credentials.Certificate('songskey.json')
@@ -137,14 +119,6 @@ def query_greater(db, listqueries):
         for doc in results:
             data = doc.to_dict()
             return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
-
-        
-
-
-
-
-
-    
 
 #make_query(listqueries)
 
