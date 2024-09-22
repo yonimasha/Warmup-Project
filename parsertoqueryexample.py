@@ -10,6 +10,6 @@ info2 = 5
 listqueries = [query, operator, info, query2, operator2, info2]
 
 
-queryattempt.make_query(listqueries) # calls function make_query in queryattempt.py
-
+result = queryattempt.make_query(listqueries) # calls function make_query in queryattempt.py
+print(result)
 
