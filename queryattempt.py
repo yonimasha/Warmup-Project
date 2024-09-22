@@ -35,13 +35,13 @@ def make_query(listqueries):
         #operator = ""
         if listqueries[1] == "==":
             result = query_equals(db, listqueries)
-            print(result)
+            return result
         elif listqueries[1] == "<":
             result = query_less(db, listqueries)
-            print(result)
+            return result
         elif listqueries[1] == ">":
             result = query_greater(db, listqueries)
-            print(result)
+            return result
     elif len(listqueries) == 6:
         # Create filters explicitly using FieldFilter for both conditions
         filter_1 = firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])
@@ -62,9 +62,7 @@ def make_query(listqueries):
         for doc in results:
             data = doc.to_dict()
             artist_songs.append(data['track'])
-        print(artist_songs)
-
-        #return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])   
+        return artist_songs
 
     #for item in listqueries:
         #print(item)
