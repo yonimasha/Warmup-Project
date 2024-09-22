@@ -10,12 +10,24 @@ def make_query(listqueries):
 
     # connect to the database
     cred, db = connect_to_database()
-    docs = db.collection("spotifytop100songs").stream()
+    docs = db.collection("top100spotifysongscoll").stream()
+    
+
+    query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '>', listqueries[2]))
+    # Fetch and display only track names
+    results = query_ref.stream()
+
+    # List to hold all the songs by the artist
+    artist_songs = []
+
+    for doc in results:
+        data = doc.to_dict()
+        artist_songs.append(data['track']) 
+    #print(artist_songs)
 
     #for doc in docs:
         #print(f"{doc.id} => {doc.to_dict()}")
 
-    #print(listqueries)
     # check the length of the list to determine if it is a compound query 
     if len(listqueries) == 3: 
         # the query is not compound 
@@ -30,13 +42,30 @@ def make_query(listqueries):
         elif listqueries[1] == ">":
             result = query_greater(db, listqueries)
             print(result)
-    # handle for compound
-    # Use filter keyword for the query and chain where clauses
-    #query_ref = songs_ref.where(filter=firestore.FieldFilter('artist', '==', listqueries[2])).where(filter=firestore.FieldFilter('genre', '==', 'pop'))
-            
-            # call func
+    elif len(listqueries) == 6:
+        # Create filters explicitly using FieldFilter for both conditions
+        filter_1 = firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])
+        filter_2 = firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5])
+        print(listqueries[1])
+        print(listqueries[4])
 
-            #print("<")
+        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5]))
+
+        # Fetch and display only track names
+        results = query_ref.stream()
+        #print(results)
+
+        # List to hold all the songs by the artist
+        artist_songs = []
+
+        
+        for doc in results:
+            data = doc.to_dict()
+            artist_songs.append(data['track'])
+        print(artist_songs)
+
+        #return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])   
+
     #for item in listqueries:
         #print(item)
     
@@ -50,9 +79,9 @@ def query_equals(db, listqueries):
      # Reference to the spotifytop100songs collection
     songs_ref = db.collection('spotifytop100songs')
 
-    if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name" or listqueries[0] == "release_date":
+    if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name" or listqueries[0] == "dance_ability":
         # Use filter keyword for the query and chain where clauses
-        query_ref = songs_ref.where(filter=firestore.FieldFilter(listqueries[0], '==', listqueries[2]))
+        query_ref =  db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter(listqueries[0], '==', listqueries[2]))
 
         # Fetch and display only track names
         results = query_ref.stream()
@@ -84,8 +113,15 @@ def query_less(db, listqueries):
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
-        #convert the dates to datetime
-        convert_dates(db, listqueries[2])
+        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '<', listqueries[2]))
+
+        # Fetch and display only track names
+        results = query_ref.stream()
+
+        for doc in results:
+            data = doc.to_dict()
+            return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
+        
 
 
 
@@ -96,38 +132,15 @@ def query_greater(db, listqueries):
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
-        #convert the dates to datetime
-        convert_dates(db, listqueries[2])
+        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '>', listqueries[2]))
+        # Fetch and display only track names
+        results = query_ref.stream()
 
-def convert_dates(db, listqueries):
-    # Convert target date string to a datetime object
-    target_date = datetime.strptime(listqueries[2], '%m/%d/%Y')
-    
-    # Reference to the spotifytop100songs collection
-    songs_ref = db.collection('spotifytop100songs')
-    
-    # Query the entire collection (you can add more filters if needed)
-    results = songs_ref.stream()
+        for doc in results:
+            data = doc.to_dict()
+            return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
 
-    # Iterate over the results
-    for doc in results:
-        data = doc.to_dict()
         
-        # Convert the release_date field to a datetime object
-        release_date_str = data.get('release_date', '')
-        
-        try:
-            release_date = datetime.strptime(release_date_str, '%m/%d/%Y')
-        except ValueError:
-            # Skip this document if the release_date format is invalid
-            print(f"Invalid date format for track: {data.get('track')}")
-            continue
-        
-        # Check if release_date is before or after the target date
-        if release_date < target_date:
-            print(f"{data['track']} by {data['artist']} was released before {listqueries[2]}")
-        else:
-            print(f"{data['track']} by {data['artist']} was released on or after {listqueries[2]}")
 
 
 
@@ -138,5 +151,4 @@ def convert_dates(db, listqueries):
 #make_query(listqueries)
 
 
-        # Use filter keyword for the query and chain where clauses
-        #query_ref = songs_ref.where(filter=firestore.FieldFilter('artist', '==', listqueries[2])).where(filter=firestore.FieldFilter('genre', '==', 'pop'))
+        
