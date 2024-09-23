@@ -6,10 +6,9 @@ from google.api_core.client_options import ClientOptions
 from google.cloud.firestore_v1.base_query import FieldFilter
 
 
-def make_query(listqueries):
+def make_query(listqueries, db):
 
     # connect to the database
-    cred, db = connect_to_database()
     docs = db.collection("top100spotifysongscoll").stream()
 
     # check the length of the list to determine if it is a compound query 
@@ -84,7 +83,7 @@ def query_equals(db, listqueries):
 
         for doc in results:
             data = doc.to_dict()
-            return(data['artist'] + data['albumn_name'] + data['genre'] + data['release_date'])  
+            return([data['artist'] + ' ' + data['album_name'] + ' ' + data['genre'] + ' ' + data['release_date']])  
         
 def query_less(db, listqueries):
      # Reference to the spotifytop100songs collection

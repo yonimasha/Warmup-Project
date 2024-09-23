@@ -114,4 +114,4 @@ if __name__ == "__main__":
                 if i + 1 != len(rtn_value):
                     print(f'{rtn_value[i]}, ', end='')
                 else:
-                    print(f'{rtn_value[i]}')
+                    print(f'{rtn_value[i]}') # type: ignore
