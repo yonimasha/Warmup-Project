@@ -10,6 +10,9 @@ def make_query(listqueries, db):
 
     # connect to the database
     docs = db.collection("top100spotifysongscoll").stream()
+    print(listqueries)
+    if 'AND' in listqueries:
+        listqueries.remove('AND')
 
     # check the length of the list to determine if it is a compound query 
     if len(listqueries) == 3: 
@@ -29,8 +32,8 @@ def make_query(listqueries, db):
         # Create filters explicitly using FieldFilter for both conditions
         filter_1 = firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])
         filter_2 = firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5])
-        print(listqueries[1])
-        print(listqueries[4])
+        # print(listqueries[1])
+        # print(listqueries[4])
 
         query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5]))
 
@@ -92,14 +95,19 @@ def query_less(db, listqueries):
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
-        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '<', listqueries[2]))
+        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '<', int(listqueries[2])))
 
         # Fetch and display only track names
         results = query_ref.stream()
+        data = []
 
         for doc in results:
-            data = doc.to_dict()
-            return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
+            print(doc)
+            song_data = doc.to_dict()
+            data.append(song_data['track'] + ' by ' + song_data['artist'])
+
+        return data
+        # return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
         
 
 
@@ -111,13 +119,17 @@ def query_greater(db, listqueries):
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
-        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '>', listqueries[2]))
+        query_ref = db.collection("top100spotifysongscoll").where(filter=firestore.FieldFilter('dance_ability', '>', int(listqueries[2])))
         # Fetch and display only track names
         results = query_ref.stream()
-
+        
+        data = []
         for doc in results:
-            data = doc.to_dict()
-            return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
+            song_data = doc.to_dict()
+            data.append(song_data['track'] + ' by ' + song_data['artist'])
+            
+        return data
+        # return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
 
 #make_query(listqueries)
 
