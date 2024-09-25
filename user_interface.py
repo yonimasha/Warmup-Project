@@ -23,8 +23,13 @@ if __name__ == "__main__":
             
             rtn_value = queryattempt.make_query(parsed_query, db)
             
+            if type(rtn_value) is bool:
+                print('Incorrect query.')
+                parser.help_func()
+                continue
+
             if len(rtn_value) == 0:
-                print('No values found for this query. ')
+                print('No values for this query')
                 continue
             
             # output of successful query 
