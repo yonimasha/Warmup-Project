@@ -7,6 +7,11 @@ from google.cloud.firestore_v1.base_query import FieldFilter
 
 
 def make_query(listqueries, db):
+    """This function takes in a list of strings as well as the data base that is being queried.
+    The length of the list is checked, and if it is empty then we return false to indicate that no query was made.
+    If it is a single query, we make calls to one of three query types based on the operator. If the query is a compound
+    query, we convert any items in a dancability query to floats and then check the collection. Returns a list of results
+    from the database given the specified criteria of the query."""
     if len(listqueries) == 0:
         return False
     # connect to the database
@@ -70,6 +75,9 @@ def connect_to_database():
     return cred, db
 
 def query_equals(db, listqueries): 
+    """This is a function to query the database using the == operator. First we reference the collection, then we check
+    to see if dance_ability is being queried to make sure that it is passed as a float when querying the database. Then we return a
+    list of all of the tracks that meet the specified query criteria."""
      # create a reference to the top100songsonspotify collection
     songs_ref = db.collection('top100songsonspotify')
 
@@ -119,49 +127,56 @@ def query_equals(db, listqueries):
         return(['Artist: ' + data['artist'] +  ' Album: ' + data['album_name'] + ' Genre: ' + data['genre']])  
         
 def query_less(db, listqueries):
-     # Reference to the spotifytop100songs collection
+    """This is a function to query the database using the < operator. First we reference the collection, then we check
+    to verify dance_ability is being queried to make sure that it is passed as a float when querying the database. Then we return a
+    list of all of the tracks that meet the specified query criteria."""
+    # make reference to the top100songsonspotify collection
     songs_ref = db.collection('top100songsonspotify')
 
+    # check to make sure that the query involves dance_ability
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
         query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter('dance_ability', '<', float(listqueries[2])))
 
-        # Fetch and display only track names
+        # fetch the results from the query
         results = query_ref.stream()
+        
+        # initialize an empty list to hold all the tracks and artists for that query 
         data = []
 
         for doc in results:
             print(doc)
             song_data = doc.to_dict()
+            # append the results of the query to the list
             data.append(song_data['track'] + ' by ' + song_data['artist'])
 
         return data
-        # return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
-        
-
-
 
 def query_greater(db, listqueries):
-     # Reference to the spotifytop100songs collection
+    """This is a function to query the database using the > operator. First we reference the collection, then we check
+    to verify dance_ability is being queried to make sure that it is passed as a float when querying the database. Then we return a
+    list of all of the tracks that meet the specified query criteria."""
+    # make reference to the top100songsonspotify collection
     songs_ref = db.collection('top100songsonspotify')
 
+    # check to make sure that the query involves dance_ability
     if listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
         print("You cannot use this operator for that key words")
     else:
         query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter('dance_ability', '>', float(listqueries[2])))
-        # Fetch and display only track names
-        results = query_ref.stream()
         
+        # fetch the results from the query
+        results = query_ref.stream()
+
+        # initialize an empty list to hold all the tracks and artists for that query 
         data = []
         for doc in results:
             song_data = doc.to_dict()
+            # append the results of the query to the list
             data.append(song_data['track'] + ' by ' + song_data['artist'])
             
         return data
-        # return("track: " + data['track'] + "     artist: " + data['artist'] + "     genre: " + data['genre'])  
-
-#make_query(listqueries)
 
 
         
