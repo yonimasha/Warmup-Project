@@ -7,7 +7,8 @@ from google.cloud.firestore_v1.base_query import FieldFilter
 
 
 def make_query(listqueries, db):
-
+    if len(listqueries) == 0:
+        return False
     # connect to the database
     docs = db.collection("top100songsonspotify").stream()
     if 'AND' in listqueries:
@@ -42,7 +43,8 @@ def make_query(listqueries, db):
 
         elif listqueries[0] == 'dance_ability' and listqueries[3] == 'dance_ability':
              query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], float(listqueries[2]))).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], float(listqueries[5])))
-        
+        else:
+            query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5]))
         # Fetch and display only track names
         results = query_ref.stream()
         #print(results)
