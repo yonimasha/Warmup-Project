@@ -38,7 +38,7 @@ def help_func():
 def parser(query):
     # defining our required operators and keywords
     operator_pattern = ['==', '>', '<', 'AND']
-    keyword_pattern = ["track", "artist", "genre", "subgenre", "dance_ability", "album_name"]
+    keyword_pattern = ["track", "artist", "genre", "sub_genre", "dance_ability", "album_name"]
     
     # check if there is an and:
     split_query = query.split('AND')
@@ -85,5 +85,5 @@ def parser(query):
         if i + 1 != len(keywords):
             queries.append('AND')
     
-    print(queries)
+    
     return queries
