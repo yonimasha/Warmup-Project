@@ -2,7 +2,7 @@
   "type": "service_account",
   "project_id": "projectdemo-fc0a1",
   "private_key_id": "b31d357f561d153acc32030ce12d8afed809ddb3",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzS71Z+uYL8wHq\n3vUWqt125p+q0jJE+fSAQ4HunHZh2/gE5qlHiJp2cdotzd6uWTXwjJHi5fQKqnuH\nrknRa2ubpZJPnJnI4rOq9j3jUa+2Zr6IXIsBXg1s6qDXtr4lOKnpXRwpR2eg6kpj\nvYIunWquMZVBv+fkalHxVzddhekL4TSUsWoqZSONZeb0JvLxM4wRAqROpoGj6rnf\njGofIgsIbedtWmma9ZTfASuIZ6VET3mivz3LlTD/ZiqT0eRw04kJZFsHyvc8sc63\nsqN9XrDlEcwiRh35rWzfIt3tYDBPcKy4t88vRXjZ4OdJ8/hrYh/a2lkDhiA5uzkD\nUzrCeJCXAgMBAAECggEAStsAw4viNrPupYIPXjbY/na7y6Q1U6HtyA0nNplBPYsK\nafVpUFHCd1gCSKROZ4kcYYE2uT3bXQafS17jN9k61IFUbAOMGxg2/dYPsZPdofAU\ndTb53AjJ3yK4I0eK7FxTZ/g1NTC4HbEjfK/WpaKYMwDFeW1nIfCXpISOu2+YhBn+\n1rIV6QzUmBxMI9V8v6MmH9DXsAkG0LpjoU/CXe6Kv3HzZCD901VWYhooPt4R0S45\n8EFHas0l+6NPQNtds2wM5svUzserRlorWdIsel7psOFE/GSkrLyo8o99JenhgbSD\nssc3LzU7i6nEE2PvZB0v4pF4QIh+Fslv9t5FdvVl6QKBgQDrpvdlihMMAdI9y8IH\n4VsPkO8NkM59RXfd8XeGBZqMgdt6kJP/NtvPpbP7ZYdGkxprZ1YmA9jMMLuIdP5/\nyIVGlRNSX68zJXso58Qqz/nn+/ACOVxmUZFMRNfsEdUm8hsu4NS+eagVd3zGZmaP\nQlNgMWo5cu3/yzIT7jd9Wm1ciQKBgQDCxwexPg85+NIpoHAaUHS39Zh01MTq8htD\nTNxvGATjojoh1/LHS4/+VH2DqK5t6/pW7hWFhyA//hq+v7WaO6xM70wOKpvvq/WE\nZ+16EiukI1UqOJzWNxafyfth22cKD5HREGdrKUzq8VsWkBXkUzmvMUqid7HweB70\nRKsgGSh8HwKBgQDNgXlkyqnbocb4bzZR6vyfsZRX7z20T52+JvNGJKLn/+MomucF\n/ZBqIKa6CYuUR3sVyTN+yYIKaEFTOjwrsfJQYHdOMfW3E+u4+42+jErzPWnMdruW\n23Fr4umujMqnQSHlmtrNFYk411AwMWMlcgEF9XIekZTuqwSMDwXDQtX2iQKBgDHI\ny3eLJDsuFRGct2qSa/LlLE2YYKiorz05dRJUMlO4kGE8IAq+jpR0Jgyz3bms2jTD\n7+5MRnr0yQM+Xv2ICRc1BtyMGYVeD4gDRFiyMkNm4IrFI5lBRWAcMUum16RjrGKi\nbbyfNtDKVfzjYSUV/KWB1NDIBUwwd8D5mD/BDm8DAoGAGWB77E5InyFiwUk0rDOF\nzcE4FbRiXgYLqzgeiHZFIC5esp32Di7eNDdCSScL04A4lhxnBsYrcUKNVR67IzlB\n9NhnHjtMpCSPYZoiy8UJm7zgZov3Y++Vqa0xVgIZjIHkHurkXwqYDYK0OQosIgeT\ncNBsUaSRTC4wpqid3pObq6U=\n-----END PRIVATE KEY-----\n",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzS71Z+uYL8wHq\n3vUWqt125p+q0jJE+fSAQ4HunHZh2/gE5qlHiJp2cdotzd6uWTXwjJHi5fQKqnuH\nrknRa2ubpZJPnJnI4rOq9j3j$
   "client_email": "firebase-adminsdk-wh0yz@projectdemo-fc0a1.iam.gserviceaccount.com",
   "client_id": "101732102907300537090",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -11,4 +11,3 @@
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wh0yz%40projectdemo-fc0a1.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
-  
