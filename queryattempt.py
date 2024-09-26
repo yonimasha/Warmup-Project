@@ -95,7 +95,7 @@ def query_equals(db, listqueries):
         
         return(artist_songs)  # This prints only the track name
     
-    elif listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "subgenre" or listqueries[0] == "album_name":
+    elif listqueries[0] == "artist" or listqueries[0] == "genre" or listqueries[0] == "sub_genre" or listqueries[0] == "album_name":
         # pass the listqueries items in as filters 
         query_ref =  db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], '==', listqueries[2]))
 
