@@ -37,18 +37,15 @@ def make_query(listqueries, db):
         filter_1 = firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])
         filter_2 = firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5])
         
+        if listqueries[0] == 'dance_ability' and listqueries[3] == 'dance_ability':
+            # check listqueries[0] and listqueries[3] to see if they are dancability. if they both are, make listqueries[2] and listqueries[5] floats
+            query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], float(listqueries[2]))).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], float(listqueries[5])))
         # check listqueries[0] to see if it is dancability. if it is, make listqueries[2] a float 
-        if listqueries[0] == 'dance_ability':
+        elif listqueries[0] == 'dance_ability':
             query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], float(listqueries[2]))).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5]))
-        
         # check listqueries[3] to see if it is dancability. if it is, make listqueries[5] a float 
         elif listqueries[3] == 'dance_ability':
             query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], float(listqueries[5])))
-
-        # check listqueries[0] and listqueries[3] to see if they are dancability. if they both are, make listqueries[2] and listqueries[5] floats
-        elif listqueries[0] == 'dance_ability' and listqueries[3] == 'dance_ability':
-             query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], float(listqueries[2]))).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], float(listqueries[5])))
-
         # otherwise run the query without converting listqueries[2] or listqueries[5] to floats
         else:
             query_ref = db.collection("top100songsonspotify").where(filter=firestore.FieldFilter(listqueries[0], listqueries[1], listqueries[2])).where(filter=firestore.FieldFilter(listqueries[3], listqueries[4], listqueries[5]))
